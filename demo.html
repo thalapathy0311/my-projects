@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student details</title>
+</head>
+<body>
+    <h1>student table</h1>
+    <button id="b1" onclick="name">sort by name</button>
+    <button id="b2">sort by marks</button>
+    <div id="container"></div>
+    <style>
+
+    </style>
+    <script>
+        var students=[
+            {name:"vasanth",dept:"computer",mark:90,grade:""},
+            {name:"devi",dept:"physics",mark:65,grade:""},
+            {name:"ram",dept:"chemistry",mark:40,grade:""},
+            {name:"janu",dept:"maths",mark:20,grade:""}
+        ];
+        function displaytable(data){
+            var tab= "<table>"
+            tab+= "<tr><td>name</td> <td>department</td> <td>mark</td> <td>grade</td></tr>"
+            for(i=0;i<data.length;i++){
+                let thing = data[i];
+                var rowColor="";
+                grade = "";
+
+                if(thing.mark>=90){
+                    grade ="A"
+                }
+                else if(thing.mark>=70){
+                    grade ="B"
+                }
+                else if(thing.mark>=40){
+                    grade ="C"
+                }
+                else{
+                    grade ="fail"
+                }
+            } 
+            tab+= "<tr"  
+        }
+    </script>
+</body>
+</html>
