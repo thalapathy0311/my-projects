@@ -1,94 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student details</title>
+    <title>studentlist</title>
+    <link rel="stylesheet" href="demo.css">
 </head>
-
 <body>
-    <center>
-    <h1>student table</h1>
-    <button onclick="names()">sort by name</button>
-    <button onclick="marks()">sort by marks</button>
-    <div id="container"></div>
-    <style>
-        table {
-            width: 50%;
-            margin: 30px ;
-            border-collapse: collapse;
-            font-family: sans-serif;
-        }
-
-        tr,
-        td {
-            border: solid 3px;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
-    <script>
-        var students = [
-            { name: "vasanth", dept: "computer", mark: 90, grade: "" },
-            { name: "devi", dept: "physics", mark: 45, grade: "" },
-            { name: "ram", dept: "chemistry", mark: 60, grade: "" },
-            { name: "janu", dept: "maths", mark: 20, grade: "" }
-        ];
-        function displaytable(data) {
-            var tab = "<table>"
-            tab += "<tr><td>name</td> <td>department</td> <td>mark</td> <td>grade</td></tr>"
-            for (i = 0; i < data.length; i++) {
-                var thing = data[i];
-                var rowColor = "";
-
-                if (thing.mark >= 90) {
-                    thing.grade = "A"
-                    rowColor = " style='background:lightgreen'"
-                }
-                else if(thing.mark >= 70) {
-                    thing.grade = "B"
-                    rowColor = " style='background:lightgreen'"
-                }
-                else if(thing.mark >= 40) {
-                    thing.grade = "C"
-                    rowColor = " style='background:lightgreen'"
-                }
-                else {
-                    thing.grade = "fail"
-                    rowColor = " style='background:lightpink'"
-                }
-                tab += "<tr" + rowColor + ">"
-                tab += "<td>" + thing.name + "</td>"
-                tab += "<td>" + thing.dept + "</td>"
-                tab += "<td>" + thing.mark + "</td>"
-                tab += "<td>" + thing.grade + "</td>"
-            }
-            tab += "</table>"  
-            document.getElementById("container").innerHTML = tab;
-
-        }
-        function names() {
-            students.sort(function (a, b) {
-                if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                    return 1;
-                }
-                if (a.name.toLowerCase() < b.name.toLowerCase()) {
-                    return -1;
-                }
-                return 0
-            });
-            displaytable(students);
-        }
-        function marks() {
-            students.sort(function (a, b) {
-                return b.mark - a.mark
-            });
-            displaytable(students);
-        }
-        displaytable(students);
-    </script>
-    </center>
+    <script src="demo.js"></script>
+    <h1>student manager</h1>
+    <button>Add student name</button>
+    <button>Add student mark</button>
+    <ul id="list"></ul>
 </body>
-
 </html>
