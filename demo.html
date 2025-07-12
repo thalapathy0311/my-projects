@@ -5,18 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>employee manager</title>
-    <link rel="stylesheet" href="demo.css">
 </head>
 
 <body>
-    <script src="demo.js"></script>
     <center>
         <h1>employee Table</h1>
         <input id="in1" placeholder="enter employee name">
         <input id="in2" placeholder="enter employee dept">
-        <button>Add employee</button>
+        <button onclick="displaytable()">Add employee</button>
         <div id="container"></div>
     </center>
+
+    <style>
+
+    </style>
+
+    <script>
+        var emp=[];
+        function displaytable(){
+        var name=document.getElementById("in1").value.trim();
+        var dept=document.getElementById("in2").value.trim();
+        if(name === "" || dept === ""){
+            alert("Enter Valid Employee Details")
+            return;
+        }
+        var tab = document.getElementById("container");
+        tab+= document.createElement("table")
+        tab+= "<tr> <td>Emp Name<td> <td>Emp Dept<td> </tr>"
+        }
+        
+    </script>
+
 </body>
 
 </html>
